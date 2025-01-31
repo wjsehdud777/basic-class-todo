@@ -49,6 +49,10 @@ const PascalCase = () => {
     setTodos(updatedTodos);
   };
 
+  const handleDelete = (id) => {
+    setTodos((prev) => prev.filter((todo) => todo.id !== id));
+  };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -68,6 +72,7 @@ const PascalCase = () => {
             >
               {todo.completed ? "완료" : "미완료"}
             </button>
+            <button onClick={() => handleDelete(todo.id)}>삭제하기</button>
           </li>
         ))}
       </ul>
