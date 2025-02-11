@@ -1,21 +1,18 @@
 import styled from "styled-components";
 import TodoItem from "./todo/TodoItem";
+import { useContext } from "react";
+import { TodoContext } from "../context/TodoContext";
 
-const PascalCase = ({ todos, toggleTodoCompleted, deleteTodo }) => {
+const PascalCase = () => {
+  const { todos } = useContext(TodoContext);
+
   return (
     <TodoListSection>
       <TodoListHeader>Tasks</TodoListHeader>
 
       <TodoListContent>
         {todos.map(({ id, text, completed }) => (
-          <TodoItem
-            key={id}
-            completed={completed}
-            text={text}
-            toggleTodoCompleted={toggleTodoCompleted}
-            deleteTodo={deleteTodo}
-            id={id}
-          />
+          <TodoItem key={id} completed={completed} text={text} id={id} />
         ))}
       </TodoListContent>
     </TodoListSection>
