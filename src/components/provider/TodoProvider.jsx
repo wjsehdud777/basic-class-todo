@@ -26,9 +26,27 @@ const TodoProvider = ({ children }) => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
+  const getFilteredTodos = (selectedFilter) => {
+    if (selectedFilter === "completed") {
+      return todos.filter((todo) => todo.completed);
+    }
+
+    if (selectedFilter === "pending") {
+      return todos.filter((todo) => !todo.completed);
+    }
+
+    return todos;
+  };
+
   return (
     <TodoContext.Provider
-      value={{ todos, addTodos, toggleTodoCompleted, deleteTodo }}
+      value={{
+        todos,
+        addTodos,
+        toggleTodoCompleted,
+        deleteTodo,
+        getFilteredTodos,
+      }}
     >
       {children}
     </TodoContext.Provider>

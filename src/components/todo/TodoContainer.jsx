@@ -7,8 +7,8 @@ const TodoContainer = () => {
   return (
     <TodoContainerWrapper>
       <TodoDashboard />
-      <PascalCase />
       <TodoForm />
+      <PascalCase />
     </TodoContainerWrapper>
   );
 };
