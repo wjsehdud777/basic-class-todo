@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TodoContext } from "../../context/TodoContext";
-import { SAMPLE_TODOS } from "../sample-todos";
+import { SAMPLE_TODOS } from "../../constants/sample-todos";
 
 const TodoProvider = ({ children }) => {
   const [todos, setTodos] = useState(SAMPLE_TODOS);
@@ -23,6 +23,7 @@ const TodoProvider = ({ children }) => {
   };
 
   const deleteTodo = (id) => {
+    // todo.id가 내가 찾는 id와 같지 않을 때 true를 반환하여 그대로 남겨둠
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 

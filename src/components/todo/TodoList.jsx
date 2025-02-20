@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import TodoItem from "./todo/TodoItem";
+import TodoItem from "./TodoItem";
 import { useContext } from "react";
-import { TodoContext } from "../context/TodoContext";
-import { useSearchParams } from "react-router-dom";
+import { TodoContext } from "../../context/TodoContext";
+import { useSearchParams } from "react-router";
 
-const PascalCase = () => {
+const TodoList = () => {
   const { getFilteredTodos } = useContext(TodoContext);
   const [searchParams] = useSearchParams();
 
@@ -32,7 +32,7 @@ const TodoListSection = styled.section`
 `;
 
 const TodoListHeader = styled.h2`
-  font-size: 1.5ren;
+  font-size: 1.5rem;
   font-weight: bold;
 `;
 
@@ -42,4 +42,4 @@ const TodoListContent = styled.ul`
   gap: 1rem;
 `;
 
-export default PascalCase;
+export default TodoList;

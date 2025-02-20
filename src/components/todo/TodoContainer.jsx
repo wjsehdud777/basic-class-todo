@@ -1,5 +1,5 @@
 import TodoForm from "./TodoForm";
-import PascalCase from "../TodoList";
+import TodoList from "./TodoList";
 import TodoDashboard from "./TodoDashboard";
 import styled from "styled-components";
 
@@ -8,13 +8,13 @@ const TodoContainer = () => {
     <TodoContainerWrapper>
       <TodoDashboard />
       <TodoForm />
-      <PascalCase />
+      <TodoList />
     </TodoContainerWrapper>
   );
 };
 
 const TodoContainerWrapper = styled.section`
-  display: flex; //세로정렬
+  display: flex;
   flex-direction: column;
   gap: 3rem;
 `;

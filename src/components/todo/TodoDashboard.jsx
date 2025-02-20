@@ -2,7 +2,7 @@ import { FileCheck, LaptopMinimal, Video } from "lucide-react";
 import { useContext } from "react";
 import styled from "styled-components";
 import { TodoContext } from "../../context/TodoContext";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 
 const TodoDashboard = () => {
   const { getFilteredTodos } = useContext(TodoContext);
@@ -16,6 +16,7 @@ const TodoDashboard = () => {
   return (
     <TodoDashboardSection>
       <TodoDashboardHeader>Quick Access</TodoDashboardHeader>
+
       <TodoDashboardCardList>
         <TodoDashboardCardWrapper $flex={2}>
           <TodoDashboardCard to="/" $selected={!selectedFilter}>
@@ -43,7 +44,7 @@ const TodoDashboard = () => {
         </TodoDashboardCardWrapper>
         <TodoDashboardCardWrapper>
           <TodoDashboardCard
-            to="filter=pending"
+            to="?filter=pending"
             $bgColor="#242424"
             $selected={selectedFilter === "pending"}
           >
@@ -51,7 +52,7 @@ const TodoDashboard = () => {
               <Video />
             </div>
             <TodoDashboardCardContent>
-              {pending} <br /> <span>Todo Task</span>
+              {pending} <br /> <span>Pending Tasks</span>
             </TodoDashboardCardContent>
           </TodoDashboardCard>
         </TodoDashboardCardWrapper>
@@ -63,7 +64,7 @@ const TodoDashboard = () => {
 const TodoDashboardSection = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 1rem; // 16px
+  gap: 1rem;
 `;
 
 const TodoDashboardHeader = styled.h2`
@@ -72,7 +73,6 @@ const TodoDashboardHeader = styled.h2`
 `;
 
 const TodoDashboardCardList = styled.ul`
-  // 가로정렬
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -84,14 +84,12 @@ const TodoDashboardCardWrapper = styled.li`
 `;
 
 const TodoDashboardCard = styled(Link)`
-  // 세로정렬
   display: flex;
   flex-direction: column;
-  /* flex: 1; */
   width: 100%;
   height: 184px;
   background-color: ${({ $bgColor = "#e6582b" }) => $bgColor};
-  justify-content: space-between; // 정방향 사이의 공간
+  justify-content: space-between;
   color: white;
   padding: 1.25rem;
   border-radius: 1rem;

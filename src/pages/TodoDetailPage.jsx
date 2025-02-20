@@ -1,8 +1,7 @@
-import { Link, useParams } from "react-router-dom";
-import { SAMPLE_TODOS } from "../components/sample-todos";
-import TodoItem, { ActionButton } from "../components/todo/TodoItem";
-import styled from "styled-components";
 import { useContext } from "react";
+import { Link, useParams } from "react-router";
+import styled from "styled-components";
+import TodoItem, { ActionButton } from "../components/todo/TodoItem";
 import { TodoContext } from "../context/TodoContext";
 
 const TodoDetailPage = () => {
@@ -24,7 +23,7 @@ const TodoDetailPage = () => {
       )}
 
       <BackLink to="/">
-        <ActionButton $bgColor="$242424">돌아가기</ActionButton>
+        <ActionButton $bgColor="#242424">돌아가기</ActionButton>
       </BackLink>
     </DetailPageWrapper>
   );

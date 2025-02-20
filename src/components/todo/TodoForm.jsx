@@ -31,7 +31,7 @@ const TodoForm = () => {
         onChange={handleChangeTodoText}
         placeholder="할 일을 입력하세요"
       />
-      <SubmitButton type="submit" $bgcolor="#582be6">
+      <SubmitButton type="submit" $bgColor="#582be6">
         제출하기
       </SubmitButton>
     </TodoFormWrapper>
@@ -39,7 +39,7 @@ const TodoForm = () => {
 };
 
 const TodoFormWrapper = styled.form`
-  display: flex; //가로정렬
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;

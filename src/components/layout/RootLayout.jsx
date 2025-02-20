@@ -1,6 +1,7 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from "react-router";
 import styled from "styled-components";
 
+// Compositional Layout
 const RootLayout = () => {
   return (
     <MainContainer>
