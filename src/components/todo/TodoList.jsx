@@ -10,7 +10,6 @@ const TodoList = () => {
   return (
     <TodoListSection>
       <TodoListHeader>Tasks</TodoListHeader>
-
       <TodoListContent>
         {todos.map(({ id, text, completed }) => (
           <TodoItem key={id} completed={completed} text={text} id={id} />

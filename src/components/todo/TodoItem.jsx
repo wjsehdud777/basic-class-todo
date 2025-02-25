@@ -9,7 +9,7 @@ const TodoItem = ({ completed, text, id }) => {
   const navigate = useNavigate();
 
   const { mutate: toggleTodoMutate } = useToggleTodoMutation();
-  const { muteate: deleteTodoMutate } = useDeleteTodoMutation();
+  const { mutate: deleteTodoMutate } = useDeleteTodoMutation();
   const navigateAfterDelete = (id) => {
     deleteTodoMutate(id);
 
