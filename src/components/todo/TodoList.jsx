@@ -11,7 +11,7 @@ const TodoList = () => {
     <TodoListSection>
       <TodoListHeader>Tasks</TodoListHeader>
       <TodoListContent>
-        {todos.map(({ id, text, completed }) => (
+        {todos?.map(({ id, text, completed }) => (
           <TodoItem key={id} completed={completed} text={text} id={id} />
         ))}
       </TodoListContent>
