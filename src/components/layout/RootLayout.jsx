@@ -8,6 +8,7 @@ const RootLayout = () => {
       <div className="max-w-3xl mx-auto p-4">
         <Outlet />
       </div>
+      <ThemeSwitchButton/>
     </main>
   );
 };
