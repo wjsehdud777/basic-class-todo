@@ -27,3 +27,5 @@ export const useToast = create(
     },
   }))
 );
+
+export default useToast;
