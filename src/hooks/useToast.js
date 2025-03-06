@@ -2,16 +2,21 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 
 export const useToast = create(
-  immer((set) => ({
+  immer((set, get) => ({
     toasts: [],
     addToast: (message) => {
       set((prevState) => {
         const id = crypto.randomUUID();
+        const { removeToast } = get();
 
         prevState.toasts.push({
           id,
           message,
         });
+
+        setTimeout(() => {
+          removeToast(id);
+        }, 3000);
       });
     },
     removeToast: (toastId) => {
@@ -27,5 +32,3 @@ export const useToast = create(
     },
   }))
 );
-
-export default useToast;
