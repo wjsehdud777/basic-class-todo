@@ -1,11 +1,11 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
-  getTodos,
   addTodos,
-  toggleTodoCompleted,
   deleteTodo,
+  getTodos,
+  toggleTodoCompleted,
 } from "../api/todo-api";
-import useToast from "./useToast";
+import { useToast } from "./useToast";
 
 export const useTodoQuery = (filter) => {
   return useQuery({
